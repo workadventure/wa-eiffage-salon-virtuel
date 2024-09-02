@@ -10,6 +10,10 @@ let popupBuilding: any;
 
 // Waiting for the API to be ready
 WA.onInit().then(() => {
+
+    WA.ui.actionBar.removeButton("roomListIcon");
+    WA.ui.actionBar.removeButton("invite-btn");
+
     console.log('Scripting API ready');
 
     WA.room.onEnterLayer("roofZone").subscribe(() => {
@@ -26,43 +30,15 @@ WA.onInit().then(() => {
         WA.room.hideLayer("Roof/roof1");
         WA.room.hideLayer("Roof/roof2");
     }
-
-    WA.room.area.onEnter("zonePopupHopital").subscribe(() => {
-        if(popupHopital) return;
-        popupHopital = WA.ui.openPopup("popupHopital", WA.state.txt_popup_hopital as string, [{
-            label: "Fermer",
-            className: "primary",
-            callback: () => {
-                popupHopital?.close();
-                popupHopital = null;
-            }
-        }]);
-    });
-
-    WA.room.area.onEnter("zoneBuilding").subscribe(() => {
-        if(popupBuilding) return;
-        popupBuilding = WA.ui.openPopup("popupBuilding", WA.state.txt_popup_building as string, [{
-            label: "Fermer",
-            className: "primary",
-            callback: () => {
-//                link = WA.state.lnk_building;
-//                WA.nav.openCoWebSite(link);
-                popupBuilding?.close();
-                popupBuilding = null;
-            }
-        }]);
-    });
-
     WA.ui.actionBar.addButton({
-        id: 'help-btn',
+        id: 'postuler-btn',
         // @ts-ignore
-        type: 'action',
-        imageSrc: 'https://svgur.com/i/10Sh.svg',
-        toolTip: 'Aide',
+        label: 'Postuler',
         callback: () => {
             WA.nav.openCoWebSite("https://hugoaverty.github.io/eiffage-UI/src/help.pdf");
         }
     });
+
     WA.player.state.tutorialDone = true;
     WA.ui.modal.closeModal();
     setTimeout(() => {
@@ -75,18 +51,7 @@ WA.onInit().then(() => {
             position: "center",
         });
     }, 1000);
-    WA.room.area.onLeave("zoneIntro").subscribe(() => {
-        WA.ui.modal.closeModal();
-    });
 
-    WA.room.area.onLeave("zoneBuilding").subscribe(() => {
-        popupBuilding?.close();
-        popupBuilding = null;
-    });
-    WA.room.area.onLeave("zonePopupHopital").subscribe(() => {
-        popupHopital?.close();
-        popupHopital = null;        
-    });
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
