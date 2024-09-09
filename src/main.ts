@@ -15,7 +15,7 @@ WA.onInit().then(() => {
     WA.ui.actionBar.removeButton("invite-btn");
 
     console.log('Scripting API ready');
-
+/*
     WA.room.onEnterLayer("roofZone").subscribe(() => {
         WA.room.hideLayer("Roof/roof1");
         WA.room.hideLayer("Roof/roof2");
@@ -30,6 +30,7 @@ WA.onInit().then(() => {
         WA.room.hideLayer("Roof/roof1");
         WA.room.hideLayer("Roof/roof2");
     }
+    */
     WA.ui.actionBar.addButton({
         id: 'postuler-btn',
         // @ts-ignore
