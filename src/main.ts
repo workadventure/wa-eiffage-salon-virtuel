@@ -38,7 +38,7 @@ WA.onInit().then(() => {
             WA.nav.openCoWebSite("https://hugoaverty.github.io/eiffage-UI/src/help.pdf");
         }
     });
-
+/*
     WA.player.state.tutorialDone = true;
     WA.ui.modal.closeModal();
     setTimeout(() => {
@@ -51,7 +51,7 @@ WA.onInit().then(() => {
             position: "center",
         });
     }, 1000);
-
+*/
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
