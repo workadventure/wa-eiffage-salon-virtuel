@@ -16,7 +16,13 @@ WA.onInit().then(() => {
 
     WA.controls.disableInviteButton();
     WA.controls.disableRoomList();
-    
+
+    WA.controls.disablePlayerProximityMeeting();
+    WA.controls.disableScreenSharing();
+    WA.controls.disableWheelZoom();
+    WA.controls.disableWebcam();
+    WA.controls.disableMicrophone();
+
     console.log('Scripting API ready');
 /*
     WA.room.onEnterLayer("roofZone").subscribe(() => {
