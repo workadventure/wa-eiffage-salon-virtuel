@@ -1190,7 +1190,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -1198,41 +1198,7 @@
          "draworder":"topdown",
          "id":93,
          "name":"configuration",
-         "objects":[
-                {
-                 "height":275,
-                 "id":223,
-                 "name":"website1",
-                 "properties":[
-                        {
-                         "name":"url",
-                         "type":"string",
-                         "value":"https:\/\/player.vimeo.com\/video\/988384403?h=d34fe1e716"
-                        }],
-                 "rotation":0,
-                 "type":"website",
-                 "visible":true,
-                 "width":374.333333333333,
-                 "x":548.333333333333,
-                 "y":905.333333333333
-                }, 
-                {
-                 "height":275,
-                 "id":224,
-                 "name":"website2",
-                 "properties":[
-                        {
-                         "name":"url",
-                         "type":"string",
-                         "value":"https:\/\/player.vimeo.com\/video\/988384403?h=d34fe1e716"
-                        }],
-                 "rotation":0,
-                 "type":"website",
-                 "visible":true,
-                 "width":374.333,
-                 "x":2085.16683333333,
-                 "y":935.5
-                }],
+         "objects":[],
          "opacity":1,
          "properties":[
                 {
@@ -1241,7 +1207,7 @@
                  "value":"admin"
                 }],
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
