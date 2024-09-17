@@ -14,6 +14,9 @@ WA.onInit().then(() => {
     WA.ui.actionBar.removeButton("roomListIcon");
     WA.ui.actionBar.removeButton("invite-btn");
 
+    WA.controls.disableInviteButton();
+    WA.controls.disableRoomList();
+    
     console.log('Scripting API ready');
 /*
     WA.room.onEnterLayer("roofZone").subscribe(() => {
