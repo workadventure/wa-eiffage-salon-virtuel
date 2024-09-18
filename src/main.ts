@@ -19,7 +19,6 @@ WA.onInit().then(() => {
 
     WA.controls.disablePlayerProximityMeeting();
     WA.controls.disableScreenSharing();
-    WA.controls.disableWheelZoom();
     WA.controls.disableWebcam();
     WA.controls.disableMicrophone();
 
