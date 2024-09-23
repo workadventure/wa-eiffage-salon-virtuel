@@ -1187,6 +1187,94 @@
                  "width":158,
                  "x":1823.5,
                  "y":895.5
+                }, 
+                {
+                 "height":87.3333333333333,
+                 "id":228,
+                 "name":"NPC_8",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":133,
+                 "x":230.333333333333,
+                 "y":216.666666666667
+                }, 
+                {
+                 "height":87.3333,
+                 "id":229,
+                 "name":"NPC_7",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":133,
+                 "x":234.5,
+                 "y":375.000016666667
+                }, 
+                {
+                 "height":87.3333,
+                 "id":230,
+                 "name":"NPC_6",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":133,
+                 "x":581.833333333333,
+                 "y":344.666683333333
+                }, 
+                {
+                 "height":87.3333,
+                 "id":231,
+                 "name":"NPC_5",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":133,
+                 "x":940.166666666667,
+                 "y":345.000016666667
+                }, 
+                {
+                 "height":87.3333,
+                 "id":232,
+                 "name":"NPC_4",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":133,
+                 "x":1288.83333333333,
+                 "y":344.83335
+                }, 
+                {
+                 "height":83.9999666666666,
+                 "id":233,
+                 "name":"NPC_3",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":85,
+                 "x":1670.83333333333,
+                 "y":617.666683333333
+                }, 
+                {
+                 "height":87.3333,
+                 "id":234,
+                 "name":"NPC_2",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":96,
+                 "x":1989.5,
+                 "y":964.83335
+                }, 
+                {
+                 "height":87.3333,
+                 "id":235,
+                 "name":"NPC_1",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":101.833333333333,
+                 "x":1074.83333333333,
+                 "y":1229.66668333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1722,7 +1810,7 @@
          "y":0
         }],
  "nextlayerid":139,
- "nextobjectid":228,
+ "nextobjectid":236,
  "orientation":"orthogonal",
  "properties":[
         {
