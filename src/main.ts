@@ -53,10 +53,10 @@ WA.onInit().then(() => {
         // @ts-ignore
         label: 'Postuler',
         callback: () => {
-            WA.nav.openCoWebSite("https://hugoaverty.github.io/eiffage-UI/src/help.pdf");
+            WA.nav.openCoWebSite("https://www.inmind.fr/forum/3c7c16");
         }
     });
-/*
+    /*
     WA.player.state.tutorialDone = true;
     WA.ui.modal.closeModal();
     setTimeout(() => {
@@ -69,7 +69,7 @@ WA.onInit().then(() => {
             position: "center",
         });
     }, 1000);
-*/
+    */
 
     for (const id of dialogues.map(dialogue => dialogue.id)) {
         listenNPCAreas(id);
@@ -155,7 +155,7 @@ async function closeDialogueBox() {
 async function openWebsite(url: string) {
     coWebsite = await WA.nav.openCoWebSite(
         url,
-        false,
+        true,
         "accelerometer; autoplay; camera; encrypted-media; gyroscope; picture-in-picture",
         75,
         1,
