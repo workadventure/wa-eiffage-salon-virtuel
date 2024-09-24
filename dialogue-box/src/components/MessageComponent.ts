@@ -6,7 +6,7 @@ export interface MessageProps {
 const BTN_LABEL = {
   MORE_TEXT: 'Next',
   NO_MORE_TEXT: 'Close',
-  NO_MORE_TEXT_BUT_CONTENT: 'View content',
+  NO_MORE_TEXT_BUT_CONTENT: 'VOIR',
 }
 const MAX_CHAR = 240;
 

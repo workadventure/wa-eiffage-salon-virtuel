@@ -132,7 +132,7 @@ async function openDialogueBox(npcId: string) {
             horizontal: "middle",
         },
         size: {            // Size on the UI (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
-            height: "220px",
+            height: "auto",
             width: "350px",
         },
         margin: {              // Website margin (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
