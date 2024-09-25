@@ -56,6 +56,6 @@ export const dialogues: DialogueInterface[] = [
         id: "NPC_8",
         npcName: "Aria",
         message: " Salut, moi c'est Thibaut, je suis technicien de maintenance CVC. Découvrez en vidéo mon métier chez Eiffage Énergie Systèmes.",
-        url: "https://player.vimeo.com/video/1012816643?h=aac214d9fb"
+        url: "https://player.vimeo.com/video/1012883214"
     },
 ]
