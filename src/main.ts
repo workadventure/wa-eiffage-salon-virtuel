@@ -53,7 +53,7 @@ WA.onInit().then(() => {
         // @ts-ignore
         label: 'Postuler',
         callback: () => {
-            WA.nav.openCoWebSite("https://www.inmind.fr/forum/3c7c16");
+            WA.nav.openCoWebSite("https://www.inmind.fr/forum/90e535");
         }
     });
     /*
