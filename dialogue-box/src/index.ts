@@ -1,5 +1,5 @@
 import { DialogueBoxComponent } from './components/DialogueBoxComponent';
-import { DialogueInterface, dialogues } from '../../src/dialogues';
+import { DialogueInterface, getDialogues } from '../../src/dialogues';
 
 console.info('"Dialogue Box" script started successfully')
 
@@ -9,7 +9,7 @@ async function process() {
   const url = new URL(window.location.toString())
   const npcId = url.searchParams.get("id")
 
-  currentNPC = dialogues.find(c => c.id === npcId)
+  currentNPC = getDialogues().find(c => c.id === npcId)
 
   if (currentNPC && currentNPC.message) {
 

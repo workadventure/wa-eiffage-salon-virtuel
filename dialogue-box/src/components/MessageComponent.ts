@@ -61,7 +61,7 @@ export class MessageComponent implements MessageProps {
 
   private paginateMessage(): string[] {
     // Extract sentences patterns from the message using a regular expression
-    const sentences = this.message.match(/\b.*?[.!?](?=\s|$)/g) || [];
+    const sentences = this.message.match(/\b.*?[.!?](?=[\s\r\n]|$)|\b.*?(?=[\r\n])|\b.+$/g) || [];
     const result: string[] = [];
 
     // Initialize variables to keep track of the current page content and page count

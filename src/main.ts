@@ -1,8 +1,8 @@
-/// <reference types="@workadventure/iframe-api-typings" />
+/// <reference types='@workadventure/iframe-api-typings' />
 
-import { bootstrapExtra } from "@workadventure/scripting-api-extra";
-import { CoWebsite, UIWebsite } from "@workadventure/iframe-api-typings";
-import { DialogueInterface, dialogues } from "./dialogues";
+import { bootstrapExtra } from '@workadventure/scripting-api-extra';
+import { CoWebsite, UIWebsite } from '@workadventure/iframe-api-typings';
+import {DialogueInterface, getDialogues} from './dialogues';
 
 console.log('Script started successfully');
 
@@ -19,10 +19,10 @@ WA.onInit().then(() => {
     console.log('Scripting API ready');
 
     const mapUrl = WA.room.mapURL
-    root = mapUrl.substring(0, mapUrl.lastIndexOf("/"))
+    root = mapUrl.substring(0, mapUrl.lastIndexOf('/'))
 
-    WA.ui.actionBar.removeButton("roomListIcon");
-    WA.ui.actionBar.removeButton("invite-btn");
+    WA.ui.actionBar.removeButton('roomListIcon');
+    WA.ui.actionBar.removeButton('invite-btn');
 
     WA.controls.disableInviteButton();
     WA.controls.disableRoomList();
@@ -33,19 +33,19 @@ WA.onInit().then(() => {
     WA.controls.disableMicrophone();
 
 /*
-    WA.room.onEnterLayer("roofZone").subscribe(() => {
-        WA.room.hideLayer("Roof/roof1");
-        WA.room.hideLayer("Roof/roof2");
+    WA.room.onEnterLayer('roofZone').subscribe(() => {
+        WA.room.hideLayer('Roof/roof1');
+        WA.room.hideLayer('Roof/roof2');
     });
 
-    WA.room.onLeaveLayer("roofZone").subscribe(() => {
-        WA.room.showLayer("Roof/roof1");
-        WA.room.showLayer("Roof/roof2");
+    WA.room.onLeaveLayer('roofZone').subscribe(() => {
+        WA.room.showLayer('Roof/roof1');
+        WA.room.showLayer('Roof/roof2');
     });
 
     if ('Entry' in WA.room.hashParameters) {
-        WA.room.hideLayer("Roof/roof1");
-        WA.room.hideLayer("Roof/roof2");
+        WA.room.hideLayer('Roof/roof1');
+        WA.room.hideLayer('Roof/roof2');
     }
     */
     WA.ui.actionBar.addButton({
@@ -53,7 +53,7 @@ WA.onInit().then(() => {
         // @ts-ignore
         label: 'Postuler',
         callback: () => {
-            WA.nav.openCoWebSite("https://www.inmind.fr/forum/90e535");
+            WA.nav.openCoWebSite('https://www.inmind.fr/forum/90e535');
         }
     });
     /*
@@ -62,16 +62,16 @@ WA.onInit().then(() => {
     setTimeout(() => {
         WA.ui.modal.closeModal();
         WA.ui.modal.openModal({
-            src: "https://hugoaverty.github.io/eiffage-UI/src/",
-            allow: "fullscreen",
-            title: "Bienvenue",
+            src: 'https://hugoaverty.github.io/eiffage-UI/src/',
+            allow: 'fullscreen',
+            title: 'Bienvenue',
             allowApi: true,
-            position: "center",
+            position: 'center',
         });
     }, 1000);
     */
 
-    for (const id of dialogues.map(dialogue => dialogue.id)) {
+    for (const id of getDialogues().map(dialogue => dialogue.id)) {
         listenNPCAreas(id);
     }
 
@@ -91,10 +91,10 @@ WA.onInit().then(() => {
             const npc = dialogueData.npc;
     
             if (npc) {
-                console.log('Variable "closeDialogueBoxEvent" changed. New value: ', npc);
+                console.log('Variable closeDialogueBoxEvent changed. New value: ', npc);
                 // If the NPC has a content to show after the dialogue box is closed, open the content
                 if (npc.url) {
-                    console.log("Open URL",npc.url)
+                    console.log('Open URL',npc.url)
                     await openWebsite(npc.url)
                 }
             }
@@ -107,12 +107,12 @@ WA.onInit().then(() => {
 
 function listenNPCAreas(npcArea: string) {
     WA.room.area.onEnter(npcArea).subscribe(async () => {
-        console.log("onEnter",npcArea)
+        console.log('onEnter',npcArea)
         await openDialogueBox(npcArea)
     });
 
     WA.room.area.onLeave(npcArea).subscribe(async () => {
-        console.log("onLeave",npcArea)
+        console.log('onLeave',npcArea)
         await closeDialogueBox()
         await closeWebsite()
     });
@@ -121,22 +121,22 @@ function listenNPCAreas(npcArea: string) {
 // UI functions
 
 async function openDialogueBox(npcId: string) {
-    console.log("openDialogueBox")
+    console.log('openDialogueBox')
     dialogueBox = await WA.ui.website.open({
         url:  root + `/dialogue-box/index.html?id=${npcId}`,
         visible: true,
         allowApi: true,
-        allowPolicy: "",   // The list of feature policies allowed
+        allowPolicy: '',   // The list of feature policies allowed
         position: {
-            vertical: "bottom",
-            horizontal: "middle",
+            vertical: 'bottom',
+            horizontal: 'middle',
         },
         size: {            // Size on the UI (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
-            height: "auto",
-            width: "350px",
+            height: 'auto',
+            width: '350px',
         },
         margin: {              // Website margin (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
-            bottom: "70px",
+            bottom: '70px',
         },
     })
 }
@@ -156,7 +156,7 @@ async function openWebsite(url: string) {
     coWebsite = await WA.nav.openCoWebSite(
         url,
         true,
-        "accelerometer; autoplay; camera; encrypted-media; gyroscope; picture-in-picture",
+        'accelerometer; autoplay; camera; encrypted-media; gyroscope; picture-in-picture',
         75,
         1,
         true,
@@ -167,7 +167,7 @@ async function openWebsite(url: string) {
 async function closeWebsite() {
     const localCoWebsite = coWebsite;
     if (localCoWebsite) {
-        console.log("coWebsite",coWebsite)
+        console.log('coWebsite',coWebsite)
         await localCoWebsite.close();
         // Avoid race condition by using a reference instead of coWebsite directly
         if (coWebsite === localCoWebsite) {
