@@ -31,8 +31,6 @@ const appElement = document.getElementById('app');
 // Flexibility: Works well whether the script is in the `<head>` or `<body>`.
 // Efficiency: Avoids setting up unnecessary event listeners if the DOM is already loaded.
 // Robustness: Handles both scenarios (loading or loaded) to prevent race conditions.
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", process)
-} else {
+WA.onInit().then(() => {
   process()
-}
+});
