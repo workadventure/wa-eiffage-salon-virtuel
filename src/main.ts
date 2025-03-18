@@ -53,7 +53,7 @@ WA.onInit().then(() => {
         // @ts-ignore
         label: 'Postuler',
         callback: () => {
-            WA.nav.openCoWebSite('https://www.inmind.fr/forum/90e535');
+            WA.nav.openCoWebSite(WA.state.loadVariable('url_Bouton') as string);
         }
     });
     /*
